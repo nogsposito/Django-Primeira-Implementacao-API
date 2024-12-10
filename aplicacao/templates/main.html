@@ -8,15 +8,24 @@
     <link rel="stylesheet" href="{% static 'aplicacao/css/main.css' %}">
 </head>
 <body>
-    <h1>Recipes of all types!</h1>
-    
-    {% for receita in receitas %}
-        <div class="receita-card">
-            <h2>{{ receita.strMeal }}</h2>
-            <h3>Category: {{ receita.strCategory }}</h3>
-            <p>Instructions: {{ receita.strInstructions|truncatechars:200 }}</p>
-        </div>
-    {% endfor %}
 
+    <div class="container">
+
+        <div class="titulo">
+            <h1>Recipes of all types!</h1>
+        </div>
+        
+        <div class="container-receitas">
+            {% for receita in receitas %}
+                <div class="receita-card">
+                    <h2>{{ receita.strMeal }}</h2>
+                    <h3>Category: {{ receita.strCategory }}</h3>
+                    <p>Instructions: {{ receita.strInstructions|truncatechars:200 }}</p>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
 </body>
+
 </html>
