@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="{% static 'aplicacao/css/main.css' %}">
 </head>
 <body>
-    <h1>Receitas de todos tipos!</h1>
+    <h1>Recipes of all types!</h1>
     
     {% for receita in receitas %}
         <div class="receita-card">
             <h2>{{ receita.strMeal }}</h2>
-            <h3>Categoria: {{ receita.strCategory }}</h3>
-            <p>{{ receita.strInstructions|truncatechars:200 }}</p>
+            <h3>Category: {{ receita.strCategory }}</h3>
+            <p>Instructions: {{ receita.strInstructions|truncatechars:200 }}</p>
         </div>
     {% endfor %}
 
