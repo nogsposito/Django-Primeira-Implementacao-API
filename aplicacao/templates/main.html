@@ -7,12 +7,14 @@
 </head>
 <body>
     <h1>Receitas de todos tipos!</h1>
-
-    <div class="receita-card">
-        <h2>{{ nome }}</h2>
-        <h3>Categoria: {{ nome }}</h3>
-        <p>{{ instrucoes }}</p>
-    </div>
+    
+    {% for receita in receitas %}
+        <div class="receita-card">
+            <h2>{{ receita.strMeal }}</h2>
+            <h3>Categoria: {{ receita.strCategory }}</h3>
+            <p>{{ receita.strInstructions|truncatechars:200 }}</p>
+        </div>
+    {% endfor %}
 
 </body>
 </html>
